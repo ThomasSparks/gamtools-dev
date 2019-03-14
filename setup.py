@@ -20,6 +20,8 @@ class CustomBuildExtCommand(build_ext):
         # of numpy headers
 
         try:
+
+
             import numpy
         except ImportError:
             raise ImportError('numpy need to be installed before GAMtools can be '
@@ -29,7 +31,7 @@ class CustomBuildExtCommand(build_ext):
         self.include_dirs.append(numpy.get_include())
 
         build_ext.run(self)
-
+print('I hear GAM')
 # Utility function to read the README file.
 # Used for the long_description.  It's nice, because now 1) we have a top level
 # README file and 2) it's easier to type in the README file than to put a raw
